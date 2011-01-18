@@ -4,7 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Collections;
 
-namespace DcxStudio2
+namespace DcxStudioNet
 {
     public class DcxBox : DcxContainer
     {

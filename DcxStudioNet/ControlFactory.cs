@@ -1,10 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-
-namespace DcxStudio2
+namespace DcxStudioNet
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Windows.Forms;
+
     public static class ControlFactory
     {
         public static DcxControl CreateControl(DcxContainer container, int x, int y)
@@ -15,16 +15,16 @@ namespace DcxStudio2
 
             switch (type)
             {
-                case (ControlType.Button):
+                case ControlType.Button:
                     ctrl = new DcxButton(container, newID);
                     break;
-                case (ControlType.Check):
+                case ControlType.Check:
                     ctrl = new DcxCheck(container, newID);
                     break;
-                case (ControlType.Box):
+                case ControlType.Box:
                     ctrl = new DcxBox(container, newID);
                     break;
-                case (ControlType.Panel):
+                case ControlType.Panel:
                     ctrl = new DcxPanel(container, newID);
                     break;
                 default:

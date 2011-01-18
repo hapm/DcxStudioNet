@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using System.ComponentModel;
 
-namespace DcxStudio2
+namespace DcxStudioNet
 {
     [XmlRootAttribute(ElementName = "DcxContainer", IsNullable = false)]
     public abstract class DcxContainer : DcxControl

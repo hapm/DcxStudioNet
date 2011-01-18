@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /*
 http://www.codeproject.com/csharp/orderedpropertygrid.asp
@@ -10,8 +7,12 @@ http://www.c-sharpcorner.com/Code/2004/June/PropertyGridInCSharp.asp
 Using Property Grid in C#
 */
 
-namespace DcxStudio2
+namespace DcxStudioNet
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
     /// <summary>
     /// Constants class used globally in DcxStudio.
     /// </summary>
@@ -22,7 +23,7 @@ namespace DcxStudio2
         public static String defaultProjectName = "DcxStudio Project.dcxs";
 
         public static FormTest dialog;
-        public static FormStudio studio;
+        public static DcxStudio studio;
         public static FormGenerate generate;
         public static XDialog xdialog;
 

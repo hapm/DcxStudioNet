@@ -1,9 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-
-namespace DcxStudio2
+namespace DcxStudioNet
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Windows.Forms;
+        
     static class Program
     {
         /// <summary>
@@ -14,7 +14,7 @@ namespace DcxStudio2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormStudio());
+            Application.Run(new DcxStudio());
         }
     }
 }

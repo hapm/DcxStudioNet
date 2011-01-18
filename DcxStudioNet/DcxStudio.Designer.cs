@@ -1,4 +1,4 @@
-namespace DcxStudio2
+namespace DcxStudioNet
 {
     partial class DcxStudio
     {

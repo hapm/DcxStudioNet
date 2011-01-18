@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-using System.ComponentModel;
-using System.Xml.Serialization;
-
-namespace DcxStudio2
+namespace DcxStudioNet
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Windows.Forms;
+    using System.ComponentModel;
+    using System.Xml.Serialization;
+
     [XmlRootAttribute(ElementName = "XDialog", IsNullable = false)]
     public class XDialog
     {

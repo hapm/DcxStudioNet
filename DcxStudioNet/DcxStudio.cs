@@ -1,15 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using System.Xml.Serialization;
-using System.IO;
-
-namespace DcxStudio2
+namespace DcxStudioNet
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Text;
+    using System.Windows.Forms;
+    using System.Xml.Serialization;
+    using System.IO;
+
     public partial class DcxStudio : Form
     {
         public SaveFileDialog saveFile;
@@ -21,7 +21,7 @@ namespace DcxStudio2
         }
 
         #region Auto generated MDI code
-        //private void ShowNewForm(object sender, EventArgs e)
+        /*//private void ShowNewForm(object sender, EventArgs e)
         //{
         //    // Create a new instance of the child form.
         //    Form childForm = new Form();
@@ -41,29 +41,29 @@ namespace DcxStudio2
         //        string FileName = openFileDialog.FileName;
         //        // TODO: Add code here to open the file.
         //    }
-        //}
+        //}*/
 
-        //private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    SaveFileDialog saveFileDialog = new SaveFileDialog();
-        //    saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-        //    saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
-        //    if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
-        //    {
-        //        string FileName = saveFileDialog.FileName;
-        //        // TODO: Add code here to save the current contents of the form to a file.
-        //    }
-        //}
+        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
+            {
+                // TODO: Add code here to save the current contents of the form to a file.
+                string fileName = saveFileDialog.FileName;
+            }
+        }
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        //private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    // TODO: Use System.Windows.Forms.Clipboard to insert the selected text or images into the clipboard
-        //}
+/*
+        ////private void CutToolStripMenuItem_Click(object sender, EventArgs e)
+        ////{
+        ////    // TODO: Use System.Windows.Forms.Clipboard to insert the selected text or images into the clipboard
+        ////}
 
         //private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
         //{
@@ -73,7 +73,7 @@ namespace DcxStudio2
         //private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
         //{
         //    // TODO: Use System.Windows.Forms.Clipboard.GetText() or System.Windows.Forms.GetData to retrieve information from the clipboard.
-        //}
+        //}*/
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -127,14 +127,14 @@ namespace DcxStudio2
 
             this.Text += DcxsC.version;
 
-            saveFile = new SaveFileDialog();
-            openFile = new OpenFileDialog();
+            this.saveFile = new SaveFileDialog();
+            this.openFile = new OpenFileDialog();
 
-            saveFile.FileName = DcxsC.defaultProjectName;
-            saveFile.DefaultExt = "dcxs";
+            this.saveFile.FileName = DcxsC.defaultProjectName;
+            this.saveFile.DefaultExt = "dcxs";
 
-            //openFile.FileName = lastOpenedProject;
-            openFile.DefaultExt = "dcxs";
+            ////openFile.FileName = lastOpenedProject;
+            this.openFile.DefaultExt = "dcxs";
         }
 
         public void selectControl(Object ctrl)
@@ -145,9 +145,12 @@ namespace DcxStudio2
         #region Control listview events
         private void lvControls_MouseClick(object sender, MouseEventArgs e)
         {
-			if (lvControls.SelectedItems.Count < 1)
-				return;
-			ListViewItem item = lvControls.SelectedItems[0];
+            if (this.lvControls.SelectedItems.Count < 1) 
+            {
+                return;
+            }
+            
+            ListViewItem item = this.lvControls.SelectedItems[0];
             DcxsC.dialog.setAddType(item.Text.Trim().ToLower());
         }
         #endregion

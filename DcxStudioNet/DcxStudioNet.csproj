@@ -8,9 +8,10 @@
     <ProjectGuid>{757890AA-3592-4281-BB9C-2A7CEEB740A4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DcxStudio2</RootNamespace>
-    <AssemblyName>DcxStudio2</AssemblyName>
+    <RootNamespace>DcxStudioNet</RootNamespace>
+    <AssemblyName>DcxStudioNet</AssemblyName>
     <ApplicationIcon>sketch.ico</ApplicationIcon>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\markus\AppData\Roaming\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

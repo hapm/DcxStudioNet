@@ -7,7 +7,7 @@ using System.Collections;
 using System.Xml.Serialization;
 
 
-namespace DcxStudio2
+namespace DcxStudioNet
 {
     public class DcxButton : DcxControl
     {

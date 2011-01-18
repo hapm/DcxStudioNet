@@ -4,7 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace DcxStudio2
+namespace DcxStudioNet
 {
     public class DcxPanel : DcxContainer
     {

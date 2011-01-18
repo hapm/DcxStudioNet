@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DcxStudio2
+namespace DcxStudioNet
 {
     public enum MouseResizeMode : byte
     {

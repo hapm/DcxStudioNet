@@ -1,14 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-using System.Drawing;
-using System.ComponentModel;
-using System.Collections;
-using System.Xml.Serialization;
-
-namespace DcxStudio2
+namespace DcxStudioNet
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Windows.Forms;
+    using System.Drawing;
+    using System.ComponentModel;
+    using System.Collections;
+    using System.Xml.Serialization;
+
     [XmlRootAttribute(ElementName = "DcxControl", IsNullable = false),
     XmlInclude(typeof(DcxContainer)),
     XmlInclude(typeof(DcxBox)),

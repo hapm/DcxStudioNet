@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Xml.Serialization;
 
-namespace DcxStudio2
+namespace DcxStudioNet
 {
     public class DcxCheck : DcxControl
     {
