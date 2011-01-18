@@ -1,6 +1,6 @@
 namespace DcxStudio2
 {
-    partial class FormStudio
+    partial class DcxStudio
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace DcxStudio2
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStudio));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DcxStudio));
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("mIRC Controls", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("Dcx Controls", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewGroup listViewGroup3 = new System.Windows.Forms.ListViewGroup("Dcx Containers", System.Windows.Forms.HorizontalAlignment.Left);
@@ -831,7 +831,7 @@ namespace DcxStudio2
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DcxStudio v";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormStudio_Load);
+            this.Load += new System.EventHandler(this.DcxStudio_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.tbMain.ResumeLayout(false);

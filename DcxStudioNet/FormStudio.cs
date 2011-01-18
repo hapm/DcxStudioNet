@@ -10,12 +10,12 @@ using System.IO;
 
 namespace DcxStudio2
 {
-    public partial class FormStudio : Form
+    public partial class DcxStudio : Form
     {
         public SaveFileDialog saveFile;
         public OpenFileDialog openFile;
 
-        public FormStudio()
+        public DcxStudio()
         {
             InitializeComponent();
         }
@@ -114,7 +114,7 @@ namespace DcxStudio2
         }
         #endregion
 
-        private void FormStudio_Load(object sender, EventArgs e)
+        private void DcxStudio_Load(object sender, EventArgs e)
         {
             DcxsC.studio = this;
             DcxsC.xdialog = new XDialog();
@@ -145,9 +145,9 @@ namespace DcxStudio2
         #region Control listview events
         private void lvControls_MouseClick(object sender, MouseEventArgs e)
         {
-			ListViewItem item = lvControls.GetItemAt(e.X, e.Y);
-			if (item == null)
+			if (lvControls.SelectedItems.Count < 1)
 				return;
+			ListViewItem item = lvControls.SelectedItems[0];
             DcxsC.dialog.setAddType(item.Text.Trim().ToLower());
         }
         #endregion
@@ -208,7 +208,7 @@ namespace DcxStudio2
 
         private void tbbOpen_ButtonClick(object sender, EventArgs e)
         {
-            openProject();
+            OpenProject();
         }
 
         private void importMircScriptToolStripMenuItem_Click(object sender, EventArgs e)
@@ -222,7 +222,7 @@ namespace DcxStudio2
         }
         #endregion
 
-        private void openProject()
+        private void OpenProject()
         {
             MessageBox.Show("Make open projct work");
         }
