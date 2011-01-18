@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -61,11 +61,11 @@
     <Compile Include="FormTest.Designer.cs">
       <DependentUpon>FormTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormStudio.cs">
+    <Compile Include="DcxStudio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormStudio.Designer.cs">
-      <DependentUpon>FormStudio.cs</DependentUpon>
+    <Compile Include="DcxStudio.Designer.cs">
+      <DependentUpon>DcxStudio.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,9 +77,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormStudio.resx">
+    <EmbeddedResource Include="DcxStudio.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>FormStudio.cs</DependentUpon>
+      <DependentUpon>DcxStudio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
