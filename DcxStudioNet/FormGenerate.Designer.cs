@@ -10,13 +10,14 @@ namespace DcxStudioNet
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">True if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
                 components.Dispose();
             }
+            
             base.Dispose(disposing);
         }
 
@@ -86,6 +87,5 @@ namespace DcxStudioNet
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TextBox txtScript;
-
     }
 }

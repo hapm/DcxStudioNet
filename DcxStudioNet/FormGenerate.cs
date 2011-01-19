@@ -10,11 +10,11 @@ namespace DcxStudioNet
 
     public partial class FormGenerate : Form
     {
-        //private String template;
+        ////private string template;
 
         public FormGenerate()
         {
-            //template = System.IO.File.ReadAllText("template.txt");
+            ////template = System.IO.File.ReadAllText("template.txt");
             InitializeComponent();
         }
 
@@ -30,7 +30,7 @@ namespace DcxStudioNet
 
         private void FormGenerate_Load(object sender, EventArgs e)
         {
-            List<String> scriptLines = new List<String>();
+            List<string> scriptLines = new List<string>();
             StringBuilder str = new StringBuilder();
 
             foreach (DcxControl ctrl in DcxsC.xdialog.getAllControls())
@@ -38,22 +38,22 @@ namespace DcxStudioNet
                 generateScripts(ctrl, scriptLines);
             }
 
-            foreach (String line in scriptLines){
+            foreach (string line in scriptLines) {
                 str.Append(line);
                 str.Append("\r\n");
             }
 
-            txtScript.Text = str.ToString();
+            this.txtScript.Text = str.ToString();
         }
 
-        private void generateScripts(DcxControl ctrl, List<String> writeTo)
+        private void generateScripts(DcxControl ctrl, List<string> writeTo)
         {
             int counter = 0;
 
             if (writeTo.Count > 0)
-                writeTo.Add("");
+                writeTo.Add(string.Empty);
 
-            writeTo.Add(String.Format(";// Creating {0} (ID: {1})", ctrl.ControlType, ctrl.ControlID));
+            writeTo.Add(string.Format(";// Creating {0} (ID: {1})", ctrl.ControlType, ctrl.ControlID));
             writeTo.Add(ctrl.generateConstructorScript(counter));
             ctrl.generateControlScript(writeTo);
 
@@ -61,7 +61,7 @@ namespace DcxStudioNet
             {
                 foreach (DcxControl child in ((DcxContainer)ctrl).getChildren())
                 {
-                    writeTo.Add("");
+                    writeTo.Add(string.Empty);
                     generateScripts(child, writeTo);
                 }
             }

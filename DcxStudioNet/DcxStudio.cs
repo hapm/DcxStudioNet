@@ -20,6 +20,25 @@ namespace DcxStudioNet
             InitializeComponent();
         }
 
+        #region Public access to statusbar
+        public string StatusText
+        {
+            get { return this.statusLabel.Text; }
+            set { this.statusLabel.Text = value; }
+        }
+
+        public int StatusProgress
+        {
+            get { return this.statusPbar.Value; }
+            set { this.statusPbar.Value = value; }
+        }
+        #endregion
+
+        public void selectControl(object ctrl)
+        {
+            this.controlProperties.SelectedObject = ctrl;
+        }
+
         #region Auto generated MDI code
         /*//private void ShowNewForm(object sender, EventArgs e)
         //{
@@ -59,6 +78,7 @@ namespace DcxStudioNet
         {
             Application.Exit();
         }
+        
 /*
         ////private void CutToolStripMenuItem_Click(object sender, EventArgs e)
         ////{
@@ -137,11 +157,6 @@ namespace DcxStudioNet
             this.openFile.DefaultExt = "dcxs";
         }
 
-        public void selectControl(Object ctrl)
-        {
-            this.controlProperties.SelectedObject = ctrl;
-        }
-
         #region Control listview events
         private void lvControls_MouseClick(object sender, MouseEventArgs e)
         {
@@ -152,20 +167,6 @@ namespace DcxStudioNet
             
             ListViewItem item = this.lvControls.SelectedItems[0];
             DcxsC.dialog.setAddType(item.Text.Trim().ToLower());
-        }
-        #endregion
-
-        #region Public access to statusbar
-        public String StatusText
-        {
-            get { return this.statusLabel.Text; }
-            set { this.statusLabel.Text = value; }
-        }
-
-        public int StatusProgress
-        {
-            get { return this.statusPbar.Value; }
-            set { this.statusPbar.Value = value; }
         }
         #endregion
 

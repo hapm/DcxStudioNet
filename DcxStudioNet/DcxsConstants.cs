@@ -18,9 +18,18 @@ namespace DcxStudioNet
     /// </summary>
     public static class DcxsC
     {
-        public static String version = "2.0";
+        public const string CATEGORY_COMMON = "Common";
+        public const string CATEGORY_GRAPHICS = "Graphics";
+        public const string CATEGORY_STYLE = "Styles";
+        public const string CATEGORY_STYLE_COMMON = "Styles - General";
+        public const string CATEGORY_XDIALOG = "XDialog";
 
-        public static String defaultProjectName = "DcxStudio Project.dcxs";
+        public const string CATEGORY_BUTTON = "Button";
+        public const string CATEGORY_CHECK = "Check";
+
+        public static string version = "2.0";
+
+        public static string defaultProjectName = "DcxStudio Project.dcxs";
 
         public static FormTest dialog;
         public static DcxStudio studio;
@@ -28,14 +37,5 @@ namespace DcxStudioNet
         public static XDialog xdialog;
 
         public static int MOUSE_EDGE_SIZE = 5;
-
-        public const String CATEGORY_COMMON = "Common";
-        public const String CATEGORY_GRAPHICS = "Graphics";
-        public const String CATEGORY_STYLE = "Styles";
-        public const String CATEGORY_STYLE_COMMON = "Styles - General";
-        public const String CATEGORY_XDIALOG = "XDialog";
-
-        public const String CATEGORY_BUTTON = "Button";
-        public const String CATEGORY_CHECK = "Check";
     }
 }

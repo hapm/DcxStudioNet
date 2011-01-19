@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-using System.Drawing;
-
 namespace DcxStudioNet
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Windows.Forms;
+    using System.Drawing;
+    
     public class DcxPanel : DcxContainer
     {
         private Panel control;
@@ -18,10 +18,10 @@ namespace DcxStudioNet
         public DcxPanel(DcxContainer container, int id)
             : base(container, id)
         {
-            control = new Panel();
-            control.Text = "Box " + id;
-            control.Name = id.ToString();
-            //control.BorderStyle = BorderStyle.FixedSingle;
+            this.control = new Panel();
+            this.control.Text = "Box " + id;
+            this.control.Name = id.ToString();
+            ////control.BorderStyle = BorderStyle.FixedSingle;
 
             this.controlType = ControlType.Panel;
             this.control.Paint += new PaintEventHandler(control_Paint);
@@ -30,25 +30,25 @@ namespace DcxStudioNet
         }
 
         #region PropertyGrid Properties to expose
-        //[Category(DcxsC.CATEGORY_CHECK), XmlAttribute()]
-        //public bool Checked
-        //{
-        //    get { return this.control.Checked; }
-        //    set { this.control.Checked = value; }
-        //}
+        ////[Category(DcxsC.CATEGORY_CHECK), XmlAttribute()]
+        ////public bool Checked
+        ////{
+        ////    get { return this.control.Checked; }
+        ////    set { this.control.Checked = value; }
+        ////}
         #endregion
 
         #region Script generation
-        public override void generateControlScript(List<String> writeTo)
+        public override void generateControlScript(List<string> writeTo)
         {
-            writeTo.Add(String.Format("xdid -l $dname {0} {1}", this.ControlID, "FAKE CLA SHIT"));
+            writeTo.Add(string.Format("xdid -l $dname {0} {1}", this.ControlID, "FAKE CLA SHIT"));
         }
 
         public override string generateChildScript(int index, DcxControl ctrl)
         {
             // xdid -c [DNAME] [ID] [CID] [CONTROL] [X] [Y] [W] [H] (OPTIONS)
-
-            return String.Format("xdid -c $dname {0} {1} {2} {3} {4} {5} {6}",
+            return string.Format(
+                "xdid -c $dname {0} {1} {2} {3} {4} {5} {6}",
                 this.ControlID, // 0
                 ctrl.ControlID, // 1
                 ctrl.ControlType.ToString().ToLower(), // 2
@@ -59,7 +59,7 @@ namespace DcxStudioNet
         }
         #endregion
 
-        public void control_Paint(Object sender, PaintEventArgs e)
+        public void control_Paint(object sender, PaintEventArgs e)
         {
             if (!this.mouseOver && !this.mouseMoving)
             {

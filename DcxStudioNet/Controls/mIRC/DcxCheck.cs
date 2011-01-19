@@ -1,13 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-using System.ComponentModel;
-using System.Drawing;
-using System.Xml.Serialization;
-
 namespace DcxStudioNet
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Windows.Forms;
+    using System.ComponentModel;
+    using System.Drawing;
+    using System.Xml.Serialization;
+    
     public class DcxCheck : DcxControl
     {
         private CheckBox control;
@@ -34,44 +34,6 @@ namespace DcxStudioNet
             styles.Add("tooltips", new DcxControlStyle("tooltips"));
 
             setupControlActionListeners(this.control);
-        }
-
-        public void changeStyle(String style, bool value)
-        {
-            if (style.Equals("3state"))
-            {
-                control.ThreeState = value;
-                return;
-            }
-
-            if (style.Equals("pushlike"))
-            {
-                control.Appearance = (value ? Appearance.Button : Appearance.Normal);
-                return;
-            }
-
-            if (style.Equals("rjustify"))
-            {
-                control.CheckAlign = (value ? ContentAlignment.MiddleRight : ContentAlignment.MiddleLeft);
-                return;
-            }
-
-            if (style.Equals("center") && value == true)
-            {
-                control.TextAlign = ContentAlignment.MiddleCenter;
-                getStyle("right").Enabled = false;
-                return;
-            }
-            else if (style.Equals("right") && value == true)
-            {
-                control.TextAlign = ContentAlignment.MiddleRight;
-                getStyle("center").Enabled = false;
-                return;
-            }
-            else
-            {
-                control.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            }
         }
 
         #region PropertyGrid Properties to expose
@@ -125,13 +87,51 @@ namespace DcxStudioNet
         }
         #endregion
 
-        #region Script generation
-        public override void generateControlScript(List<String> writeTo)
+        public void changeStyle(string style, bool value)
         {
-            writeTo.Add(String.Format("xdid -t $dname {0} {1}", this.ControlID, ctrl.Text));
+            if (style.Equals("3state"))
+            {
+                control.ThreeState = value;
+                return;
+            }
+
+            if (style.Equals("pushlike"))
+            {
+                control.Appearance = value ? Appearance.Button : Appearance.Normal;
+                return;
+            }
+
+            if (style.Equals("rjustify"))
+            {
+                control.CheckAlign = value ? ContentAlignment.MiddleRight : ContentAlignment.MiddleLeft;
+                return;
+            }
+
+            if (style.Equals("center") && value == true)
+            {
+                control.TextAlign = ContentAlignment.MiddleCenter;
+                getStyle("right").Enabled = false;
+                return;
+            }
+            else if (style.Equals("right") && value == true)
+            {
+                control.TextAlign = ContentAlignment.MiddleRight;
+                getStyle("center").Enabled = false;
+                return;
+            }
+            else
+            {
+                control.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            }
+        }
+
+        #region Script generation
+        public override void generateControlScript(List<string> writeTo)
+        {
+            writeTo.Add(string.Format("xdid -t $dname {0} {1}", this.ControlID, ctrl.Text));
 
             if (this.Checked)
-                writeTo.Add(String.Format("xdid -c $dname {0}", this.ControlID));
+                writeTo.Add(string.Format("xdid -c $dname {0}", this.ControlID));
         }
         #endregion
     }

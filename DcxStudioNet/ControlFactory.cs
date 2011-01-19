@@ -10,7 +10,7 @@ namespace DcxStudioNet
         public static DcxControl CreateControl(DcxContainer container, int x, int y)
         {
             DcxControl ctrl;
-            int newID = DcxsC.dialog.NextID;
+            int newID = DcxsC.dialog.ComputeNextID();
             ControlType type = DcxsC.dialog.getAddType();
 
             switch (type)
@@ -45,7 +45,7 @@ namespace DcxStudioNet
         /// </summary>
         /// <param name="type">A lower-cased string representing a control.</param>
         /// <returns>The corresponding ControlType.</returns>
-        public static ControlType getTypeFromString(String type)
+        public static ControlType getTypeFromString(string type)
         {
             if (type == null)
                 return ControlType.UNKNOWN;

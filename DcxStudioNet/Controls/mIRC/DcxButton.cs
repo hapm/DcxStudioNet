@@ -1,14 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-using System.ComponentModel;
-using System.Collections;
-using System.Xml.Serialization;
-
-
 namespace DcxStudioNet
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Windows.Forms;
+    using System.ComponentModel;
+    using System.Collections;
+    using System.Xml.Serialization;
+
     public class DcxButton : DcxControl
     {
         private Button control;
@@ -36,7 +35,7 @@ namespace DcxStudioNet
 
         #region PropertyGrid Properties to expose
         [Category(DcxsC.CATEGORY_BUTTON), XmlAttribute()]
-        public String Text
+        public string Text
         {
             get { return ctrl.Text; }
             set { ctrl.Text = value; }
@@ -65,9 +64,9 @@ namespace DcxStudioNet
         #endregion
 
         #region Script generation
-        public override void generateControlScript(List<String> writeTo)
+        public override void generateControlScript(List<string> writeTo)
         {
-            writeTo.Add(String.Format("xdid -t $dname {0} {1}", this.ControlID, ctrl.Text));
+            writeTo.Add(string.Format("xdid -t $dname {0} {1}", this.ControlID, ctrl.Text));
         }
         #endregion
     }

@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Forms;
-using System.Xml.Serialization;
-using System.ComponentModel;
-
 namespace DcxStudioNet
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.Windows.Forms;
+    using System.Xml.Serialization;
+    using System.ComponentModel;
+    
     [XmlRootAttribute(ElementName = "DcxContainer", IsNullable = false)]
     public abstract class DcxContainer : DcxControl
     {
@@ -22,12 +22,6 @@ namespace DcxStudioNet
             children = new List<DcxControl>();
         }
 
-
-        public List<DcxControl> getChildren()
-        {
-            return children;
-        }
-
         #region PropertyGrid Properties to expose
         [Browsable(false)]
         public DcxControl[] Controls
@@ -38,6 +32,7 @@ namespace DcxStudioNet
                 this.children.CopyTo(controls);
                 return controls;
             }
+            
             set
             {
                 if (value == null)
@@ -52,6 +47,11 @@ namespace DcxStudioNet
         }
         #endregion
 
-        public abstract String generateChildScript(int index, DcxControl ctrl);
+        public List<DcxControl> getChildren()
+        {
+            return children;
+        }
+
+        public abstract string generateChildScript(int index, DcxControl ctrl);
     }
 }
